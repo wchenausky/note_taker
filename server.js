@@ -6,7 +6,7 @@ const fs = require('fs')
 const PORT = process.env.PORT || 8081;
 
 app.use(express.json());
-app.use(express.urlencodedlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 
 require('./Develop/routes/apiRoutes')(app)
