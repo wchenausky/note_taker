@@ -16,12 +16,12 @@ app.post('/api/notes', (req, res)=> {
         text: req.body.text
     }
 
-fs.readFile(path.join(_dirname, './db/db.json'), (err, data) => {
+fs.readFile(path.join(__dirname, './db/db.json'), (err, data) => {
     if (err) throw err;
     db.push(newNotes);
 
 
-    fs.writeFile(ath.join(_dirname, './db/db.json'), JSON.stringify(db), function(err){
+    fs.writeFile(ath.join(__dirname, './db/db.json'), JSON.stringify(db), function(err){
         if (err) throw err;
         res.send(newNotes)
     })
